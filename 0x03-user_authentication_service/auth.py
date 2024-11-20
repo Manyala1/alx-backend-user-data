@@ -15,3 +15,9 @@ def _hash_password(password: str) -> str:
     Returns salted, hashed pswd as bytestring
     """
     return hashpw(password.encode('utf-8'), gensalt())
+
+def _generate_uuid() -> str:
+    """ Generates UUID
+    Returns string representations of new UUID
+    """
+    return str(uuid4())
