@@ -72,12 +72,12 @@ class DB:
         user_to_update = self.find_user_by(id=user_id)
 
         users_columns = [
-                'id',
-                'email',
-                'hashsed_password',
-                'session_id',
-                'reset_token'
-                ]
+            'id',
+            'email',
+            'hashed_password',
+            'session_id',
+            'reset_token'
+            ]
 
         for k, v in kwargs.items():
             if k in users_columns:
@@ -85,4 +85,4 @@ class DB:
             else:
                 raise ValueError
 
-            self._session.commit()
+        self._session.commit()
